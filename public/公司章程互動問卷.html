@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="源點品牌顧問股份有限公司章程逐條互動問卷" />
+    <title>公司章程逐條互動問卷｜AiTOM</title>
+    <style>
+      :root { --ink:#17263b; --muted:#5e6d7e; --paper:#f7f4ee; --card:#fffdfa; --line:#dfe4e8; --navy:#173c58; --teal:#167f82; --gold:#d6922e; --danger:#a84444; --shadow:0 12px 35px rgba(28,42,56,.09); }
+      * { box-sizing:border-box; }
+      body { margin:0; color:var(--ink); background:linear-gradient(130deg,#eef4f4 0%,var(--paper) 46%,#f8f0e1 100%); font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif; line-height:1.65; }
+      button,select,textarea,input { font:inherit; }
+      .shell { max-width:1140px; margin:0 auto; padding:32px 22px 80px; }
+      .hero { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:24px; padding:38px; border-radius:24px; color:#f8fbfc; background:linear-gradient(135deg,#153c59,#1d676d); box-shadow:var(--shadow); }
+      .eyebrow { margin:0 0 10px; color:#bde4dd; font-size:.78rem; font-weight:750; letter-spacing:.12em; text-transform:uppercase; }
+      h1 { margin:0; font-family:ui-serif,"Noto Serif TC","Songti TC",serif; font-size:clamp(2rem,5vw,3.45rem); line-height:1.18; letter-spacing:.02em; }
+      .hero p:last-child { max-width:650px; margin:16px 0 0; color:#dbeaed; }
+      .hero-note { align-self:end; padding:14px 17px; border:1px solid rgba(255,255,255,.26); border-radius:12px; color:#e7f5f2; font-size:.88rem; }
+      .panel { margin-top:22px; padding:22px 24px; background:rgba(255,253,250,.86); border:1px solid rgba(255,255,255,.7); border-radius:18px; box-shadow:0 8px 24px rgba(28,42,56,.05); }
+      .intro { display:grid; grid-template-columns:1.3fr 1fr; gap:24px; }
+      .intro h2,.toolbar h2 { margin:0 0 8px; font-size:1.1rem; }
+      .intro p { margin:0; color:var(--muted); font-size:.94rem; }
+      .guide { margin:0; padding-left:18px; color:var(--muted); font-size:.92rem; }
+      .guide li+li { margin-top:5px; }
+      .toolbar { position:sticky; top:10px; z-index:5; display:grid; grid-template-columns:1fr auto; align-items:center; gap:18px; margin-top:22px; padding:15px 18px; background:rgba(255,253,250,.94); border:1px solid var(--line); border-radius:15px; box-shadow:0 10px 26px rgba(28,42,56,.08); backdrop-filter:blur(12px); }
+      .progress-wrap { display:flex; align-items:center; gap:12px; }
+      .progress { width:180px; height:8px; overflow:hidden; border-radius:999px; background:#e5eaed; }
+      .progress > span { display:block; height:100%; border-radius:inherit; background:var(--teal); transition:width .2s ease; }
+      #progressText { color:var(--muted); white-space:nowrap; font-size:.88rem; }
+      .toolbar-actions,.filters,.actions { display:flex; flex-wrap:wrap; gap:8px; }
+      button,.file-label { display:inline-flex; align-items:center; justify-content:center; min-height:38px; padding:8px 12px; border:1px solid var(--line); border-radius:9px; color:var(--ink); background:white; cursor:pointer; font-size:.88rem; font-weight:650; transition:transform .15s,background .15s,border-color .15s; }
+      button:hover,.file-label:hover { transform:translateY(-1px); border-color:#a8c2c0; background:#f3fbfa; }
+      button.primary { color:white; border-color:var(--navy); background:var(--navy); }
+      button.primary:hover { background:#0e304a; }
+      button.danger { color:var(--danger); }
+      .file-label input { display:none; }
+      .filters { margin:22px 0 12px; }
+      .filter.active { color:white; border-color:var(--teal); background:var(--teal); }
+      .section { margin-top:34px; }
+      .section-head { display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:12px; }
+      .section-head h2 { margin:0; font-family:ui-serif,"Noto Serif TC",serif; font-size:1.5rem; }
+      .section-head span { color:var(--muted); font-size:.86rem; }
+      .article-list { display:grid; gap:13px; }
+      .article { overflow:hidden; background:var(--card); border:1px solid var(--line); border-left:5px solid #c8d7da; border-radius:14px; box-shadow:0 5px 14px rgba(24,42,58,.035); }
+      .article[data-status="修改"] { border-left-color:var(--gold); }
+      .article[data-status="刪除"] { border-left-color:var(--danger); }
+      .article[data-status="待討論"] { border-left-color:#8b6ab0; }
+      .article-head { display:grid; grid-template-columns:auto minmax(0,1fr) minmax(120px,160px); gap:13px; align-items:center; padding:16px 18px; }
+      .number { display:grid; place-items:center; min-width:45px; height:34px; padding:0 8px; border-radius:8px; color:#eef8f6; background:var(--navy); font-size:.88rem; font-weight:800; }
+      .article h3 { margin:0; font-size:1.03rem; }
+      .tag { display:inline-block; margin-left:7px; padding:2px 7px; border-radius:999px; color:#775015; background:#f8ead0; font-size:.72rem; font-weight:750; vertical-align:middle; }
+      select { width:100%; padding:8px 10px; border:1px solid #cbd5dc; border-radius:8px; color:var(--ink); background:white; }
+      .article-body { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(250px,.85fr); gap:18px; padding:0 18px 18px; }
+      .original,.prompt { padding:14px 15px; border-radius:10px; }
+      .original { white-space:pre-line; color:#344557; background:#f1f5f5; font-family:ui-serif,"Noto Serif TC",serif; font-size:.94rem; }
+      .original-label,.prompt-label { display:block; margin-bottom:5px; color:#667a83; font-family:"Noto Sans TC",sans-serif; font-size:.72rem; font-weight:800; letter-spacing:.08em; }
+      .prompt { color:#455766; background:#fff7e9; font-size:.9rem; }
+      textarea { width:100%; min-height:112px; margin-top:9px; padding:10px 11px; resize:vertical; border:1px solid #ccd6dc; border-radius:8px; color:var(--ink); background:white; line-height:1.55; }
+      textarea:focus,select:focus { outline:3px solid rgba(22,127,130,.16); border-color:var(--teal); }
+      .empty { padding:28px; text-align:center; color:var(--muted); background:rgba(255,255,255,.58); border:1px dashed #bfcacf; border-radius:13px; }
+      .bottom { display:flex; justify-content:space-between; gap:16px; align-items:center; margin-top:30px; padding:24px; border-radius:16px; color:#ecf7f5; background:var(--navy); }
+      .bottom p { margin:0; font-size:.91rem; }
+      .bottom strong { color:white; }
+      .saved { color:#196c60; font-size:.82rem; font-weight:700; }
+      @media (max-width:760px) { .shell { padding:16px 13px 56px; } .hero { grid-template-columns:1fr; padding:28px 23px; } .hero-note { align-self:start; } .intro,.article-body { grid-template-columns:1fr; } .toolbar { grid-template-columns:1fr; top:0; } .article-head { grid-template-columns:auto minmax(0,1fr); } .article-head select { grid-column:1 / -1; } .progress { flex:1; } .bottom { align-items:flex-start; flex-direction:column; } }
+      @media print { body { background:white; } .toolbar,.filters,.bottom,.hero-note,.prompt textarea,.saved { display:none !important; } .shell { max-width:none; padding:0; } .hero { color:#17263b; background:white; box-shadow:none; border-bottom:2px solid #173c58; border-radius:0; padding:15px 0 24px; } .hero p:last-child { color:#344557; } .article { break-inside:avoid; box-shadow:none; } .article-body { grid-template-columns:1fr; } }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">AiTOM · Governance working draft</p>
+          <h1>公司章程<br>逐條互動問卷</h1>
+          <p>針對《源點品牌顧問股份有限公司（閉鎖性）公司章程》草案逐條確認。每一條先選擇處理方式，再寫下你的想法；完成後下載答案檔並回傳給我，我會據此分析、提出修訂理由與條文版本。</p>
+        </div>
+        <div class="hero-note">本頁只儲存在此瀏覽器<br>不會自動送出或公開</div>
+      </header>
+
+      <section class="panel intro" aria-label="使用說明">
+        <div><h2>如何填寫</h2><p>每一條至少選一個狀態：<strong>保留</strong>、<strong>修改</strong>、<strong>刪除</strong>或<strong>待討論</strong>。需要變更時，把真正想達成的商業安排寫出來即可，不必先擬法律文字。</p></div>
+        <ul class="guide"><li>系統會在每次輸入後自動暫存。</li><li>可用篩選找出尚未處理或要修改的條文。</li><li>完成時按「下載答案」；將 JSON 檔拖回這個對話即可。</li></ul>
+      </section>
+
+      <section class="toolbar" aria-label="問卷工具列">
+        <div class="progress-wrap"><div class="progress" aria-hidden="true"><span id="progressBar"></span></div><span id="progressText">尚未填寫</span><span class="saved" id="saveStatus" aria-live="polite"></span></div>
+        <div class="toolbar-actions"><button id="exportBtn" class="primary" type="button">下載答案 JSON</button><label class="file-label">載入答案<input id="importInput" type="file" accept="application/json,.json" /></label><button id="printBtn" type="button">列印／存成 PDF</button><button id="resetBtn" class="danger" type="button">清除本機答案</button></div>
+      </section>
+
+      <nav class="filters" aria-label="條文篩選"><button class="filter active" data-filter="all" type="button">全部條文</button><button class="filter" data-filter="未填" type="button">尚未處理</button><button class="filter" data-filter="修改" type="button">要修改</button><button class="filter" data-filter="待討論" type="button">待討論</button><button class="filter" data-filter="必要" type="button">必要記載</button></nav>
+      <div id="questionnaire"></div>
+      <section class="bottom"><p><strong>下一步：</strong>按「下載答案 JSON」後，把檔案回傳給我。我會先分析每條決策是否一致、哪些應留在章程、哪些適合另列股東協議，然後產出可審閱的修訂稿。</p><button id="bottomExport" type="button">下載答案</button></section>
+    </main>
+
+    <script>
+      const STORAGE_KEY = 'aitom-charter-questionnaire-v1';
+      const sections = [
+        { title:'第一章｜總則', items:[
+          ['1','公司名稱',true,'本公司依照公司法規定組織之，定名為源點品牌顧問股份有限公司。\n（本公司英文名稱為 Aitom Brand Consultancy Co., Ltd.。）','確認中、英文公司名稱是否是要登記的最終名稱；若改名，請直接寫出完整名稱。'],
+          ['2','閉鎖性屬性',true,'本公司為閉鎖性股份有限公司。','是否確定維持閉鎖性公司？此安排的重點是股東人數與股份轉讓控制。'],
+          ['3','所營事業',true,'001 I103060 管理顧問業\n002 IZ15010 市場研究及民意調查業\n003 I501010 產品設計業\n004 F601010 智慧財產權業\n005 I599990 其他設計業\n006 I301010 資訊軟體服務業\n007 I301030 電子資訊供應服務業\n008 I301060 網路廣告平臺業\n009 I401010 一般廣告服務業\n010 I199990 其他顧問服務業\n011 IZ99990 其他工商服務業\n012 I102010 一般投資顧問業\n013 F218010 資訊軟體零售業\n014 F399040 無店面零售業\n015 F299990 其他零售業\n016 ZZ99999 除許可業務外，得經營法令非禁止或限制之業務。','逐項確認要保留、刪除或新增的業務。尤其請註記未來是否會做 AI 服務、教育訓練、平台、投資或零售。'],
+          ['4','公司所在地與分公司',true,'本公司設總公司於高雄市，必要時經董事會之決議得在國內外設立分公司。','總公司是否確定只載「高雄市」？未來是否需要設分公司；決定權要由董事還是股東掌握？'],
+          ['5','公告方法',false,'本公司之公告方法依照公司法第 28 條規定辦理。','是否保留法定公告方式，或有需要另訂電子公告／通知機制？'],
+          ['6','對外保證',false,'本公司為業務需要得對外保證。','這是高風險授權。要保留、刪除，還是限制「對象、金額、須經誰同意」？'],
+        ]},
+        { title:'第二章｜股份', items:[
+          ['7','資本額與股份種類',true,'本公司資本額定為新臺幣壹仟萬元，分為壹佰萬股，每股金額新臺幣壹拾元，分次發行。\n本公司股份均為普通股。未來如發行特別股，其種類、權利義務及其他發行條件，應依法經股東會決議修正章程後辦理。','確認授權資本額 1,000 萬、每股 10 元與普通股設計。是否預留未來增資、員工股或投資人的彈性？'],
+          ['8','第一次發行與發起人出資',false,'第一次發行 30 萬股，每股新臺幣 10 元，實收資本額新臺幣 300 萬元，均由發起人以現金認足並繳足。\n徐敏芳：18 萬股／180 萬元。\n張健一：12 萬股／120 萬元。\n設立時無以技術或勞務抵充出資之情事。','確認股數、金額、姓名與出資方式。若有人以技術、品牌、客戶資源或勞務出資，須改為明確安排。'],
+          ['9','股份轉讓限制',true,'股東轉讓股份時，先由其他股東優先承購，沒人買才可經同意轉讓給外部人。\n原稿仍保留 A–E 套版選項，尚未選定。','請描述真正規則：誰有優先承購權？外部轉讓要過半數或全體同意？價格與回覆期限如何定？贈與、繼承、配偶／家族或自己控制公司是否例外？'],
+          ['10','股東名簿停止變更',false,'股東名簿記載之變更，於股東常會開會前 30 日內，股東臨時會開會前 15 日內，或公司決定分派股息及紅利或其他利益之基準日前 5 日內，不得為之。','是否保留法定期間文字？'],
+          ['11','庫藏股與員工股對象',false,'本公司依公司法收買之庫藏股、員工認股權憑證及限制員工權利新股，發給對象包括符合一定條件之控制或從屬公司員工。','目前或未來是否有控制／從屬公司？若沒有，可考慮刪除或改為更貼近實際的員工獎酬安排。'],
+        ]},
+        { title:'第三章｜股東會', items:[
+          ['12','股東常會與臨時會',false,'股東會分常會及臨時會 2 種。常會每年至少召集一次，於每會計年度終了後 6 個月內由董事會依法召開；臨時會於必要時依法召集。','是否保留？若希望日常治理更快，可另以書面決議與重大事項清單配合。'],
+          ['13','視訊與書面股東決議',false,'股東會得以視訊會議或其他經中央主管機關公告方式為之。經全體股東同意，股東可就當次議案以書面方式行使表決權，而不實際集會。','是否保留視訊及全體同意的書面決議？這對兩名股東的公司通常有實務便利性。'],
+          ['14','股東表決權',false,'本公司各股東，每股有一表決權。但公司依法持有自己之股份，無表決權。','是否維持一股一權？未來是否想用特別股做不同表決權或特定事項否決權？'],
+          ['15','股東會普通決議門檻',false,'除公司法另有規定外，應有代表已發行股份總數過半數股東出席，以出席股東表決權過半數同意行之。','是否提高重要事項的門檻？請區分普通營運決策與增資、借款、出售 IP、合併／解散等重大事項。'],
+          ['16','政府或法人單一股東特例',false,'本公司僅為政府或法人股東一人所組織時，股東會職權由董事會行使，不適用有關股東會之規定。','現有草案列兩名自然人發起人，通常不適用。要保留作未來彈性，還是刪除避免無關條文？'],
+        ]},
+        { title:'第四章｜董事及監察人', items:[
+          ['17','不設董事會',false,'本公司不設董事會。','確認治理架構是否採「不設董事會」。若董事為 2 人，仍須把決策、代表與簽署權限寫清楚。'],
+          ['18','董事與監察人人數、任期',true,'本公司設董事 2 人，監察人 1 人，任期 3 年，由股東會就有行為能力之人選任，連選得連任。','要維持 2 位董事、1 位監察人嗎？誰擔任董事長／代表人？是否需要監察人？'],
+          ['19','董事書面決議',false,'經本公司全體董事同意，董事就當次董事會議案得以書面方式行使表決權，而不實際集會。','是否保留全體董事書面決議？若兩位董事意見不同，如何處理僵局？'],
+          ['20','董事及監察人報酬',false,'全體董事及監察人之報酬，由股東會議定之。','報酬要由股東會逐案決定、訂上限，或授權董事依固定規則處理？'],
+          ['21','董事及監察人選任方式',false,'發起人及股東會選任董事及監察人之方式，依公司法第一百九十八條規定辦理。','是否保留累積投票制的法定預設，或要改成更符合兩位股東協商的選任方式？'],
+        ]},
+        { title:'第五章｜經理人', items:[
+          ['22','經理人',false,'本公司得設經理人，其委任、解任及報酬，依照公司法第 29 條規定辦理。','會不會聘任總經理／經理人？若會，請寫出人選、職權範圍、誰可任免及薪酬核准門檻。'],
+        ]},
+        { title:'第六章｜會計與盈餘', items:[
+          ['23','年度決算',false,'每屆會計年度終了，董事會應編造營業報告書、財務報表及盈餘分派或虧損撥補議案，並提請股東常會承認。','是否維持每年一次的決算與分派？'],
+          ['24–25','原稿缺漏條文',false,'原始草案在第 23 條後直接跳至第 26 條，未見第 24、25 條文字。','請確認：這兩條是故意刪除、排版遺漏，或應補入特定制度？這是本輪修訂必須排除的套版缺口。'],
+          ['26','股息及紅利分派',false,'股息及紅利之分派，除公司法另有規定外，依各股東持有股份比例為準，並由股東會決議。但公司無盈餘時，不得分派。','是否依持股比例分派？有無要保留營運資金、設定最低保留額，或未來搭配特別股的規劃？'],
+          ['27','員工酬勞',true,'公司年度如有獲利，應提撥新臺幣壹仟元整為員工酬勞。但公司尚有累積虧損時，應預先保留彌補數額。','固定 1,000 元是否符合你的用人與獎酬政策？請決定固定金額或當年度獲利的比例。'],
+          ['28','控制或從屬公司員工酬勞',false,'本公司分派員工酬勞之對象包括符合一定條件之控制或從屬公司員工。','目前或未來是否有控制／從屬公司？若無，是否刪除？'],
+          ['29','法定盈餘公積與股東紅利',false,'年度總決算如有盈餘，應先提繳稅款、彌補累積虧損，次提 10% 為法定盈餘公積；其餘除派付股息外，如尚有盈餘，再由股東會決議分派股東紅利。','是否維持年度盈餘分派？有無希望明定保留盈餘、再投資或股東紅利的原則？'],
+        ]},
+        { title:'第七章｜附則', items:[
+          ['30','未盡事宜',false,'本章程未訂事項，悉依公司法規定辦理。','通常保留；是否有想優先納入章程的特殊治理規則？'],
+          ['31','訂立日期',true,'本章程訂立於民國 115 年 06 月　日。','請確認此為設立章程日期還是修訂日期；正式定稿時再填入正確日期。'],
+        ]},
+      ];
+
+      let responses = loadResponses();
+      let activeFilter = 'all';
+      const allItems = sections.flatMap(section => section.items.map(item => ({ section:section.title, id:item[0], title:item[1], required:item[2], original:item[3], prompt:item[4] })));
+
+      function loadResponses() { try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch { return {}; } }
+      function escapeHtml(value) { return String(value).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char])); }
+      function itemMatches(item) { const answer = responses[item.id] || {}; if (activeFilter === 'all') return true; if (activeFilter === '必要') return item.required; if (activeFilter === '未填') return !answer.status; return answer.status === activeFilter; }
+      function render() {
+        const root = document.getElementById('questionnaire');
+        const markup = sections.map(section => {
+          const visible = section.items.map(item => ({ id:item[0], title:item[1], required:item[2], original:item[3], prompt:item[4] })).filter(itemMatches);
+          if (!visible.length) return '';
+          return `<section class="section"><div class="section-head"><h2>${escapeHtml(section.title)}</h2><span>${visible.length} 條</span></div><div class="article-list">${visible.map(articleMarkup).join('')}</div></section>`;
+        }).join('');
+        root.innerHTML = markup || '<p class="empty">此篩選下沒有條文。</p>';
+        updateProgress();
+      }
+      function articleMarkup(item) {
+        const answer = responses[item.id] || {};
+        const status = answer.status || '';
+        return `<article class="article" data-id="${escapeHtml(item.id)}" data-status="${escapeHtml(status)}"><div class="article-head"><div class="number">${escapeHtml(item.id)}</div><h3>第 ${escapeHtml(item.id)} 條｜${escapeHtml(item.title)}${item.required ? '<span class="tag">必要記載</span>' : ''}</h3><label><span class="visually-hidden">第 ${escapeHtml(item.id)} 條處理方式</span><select data-field="status"><option value="">請選擇</option><option ${status==='保留'?'selected':''}>保留</option><option ${status==='修改'?'selected':''}>修改</option><option ${status==='刪除'?'selected':''}>刪除</option><option ${status==='待討論'?'selected':''}>待討論</option></select></label></div><div class="article-body"><div class="original"><span class="original-label">原稿內容</span>${escapeHtml(item.original)}</div><div><div class="prompt"><span class="prompt-label">決策提示</span>${escapeHtml(item.prompt)}</div><label><span class="visually-hidden">第 ${escapeHtml(item.id)} 條備註</span><textarea data-field="note" placeholder="請輸入你的決定、疑慮或希望的安排…">${escapeHtml(answer.note || '')}</textarea></label></div></div></article>`;
+      }
+      function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(responses)); const status = document.getElementById('saveStatus'); status.textContent = '已暫存'; window.clearTimeout(save.timer); save.timer = window.setTimeout(() => status.textContent = '', 1300); }
+      function updateProgress() { const done = allItems.filter(item => responses[item.id]?.status).length; const bar = document.getElementById('progressBar'); document.getElementById('progressText').textContent = `已處理 ${done} / ${allItems.length} 項`; bar.style.width = `${Math.round(done / allItems.length * 100)}%`; }
+      function handleInput(event) { const field = event.target.dataset.field; if (!field) return; const article = event.target.closest('.article'); const id = article.dataset.id; responses[id] = { ...(responses[id] || {}), [field]:event.target.value }; if (field === 'status') { article.dataset.status = event.target.value; updateProgress(); } save(); }
+      function exportAnswers() { const payload = { format:'aitom-charter-questionnaire/v1', exportedAt:new Date().toISOString(), source:'源點股份有限公司（閉鎖性）公司章程草案', responses, articles:allItems.map(({section,...item}) => ({section,...item})) }; const blob = new Blob([JSON.stringify(payload,null,2)], {type:'application/json'}); const url = URL.createObjectURL(blob); const link = Object.assign(document.createElement('a'), {href:url, download:`AiTOM-公司章程逐條答案-${new Date().toISOString().slice(0,10)}.json`}); link.click(); URL.revokeObjectURL(url); }
+      function importAnswers(file) { const reader = new FileReader(); reader.onload = () => { try { const data = JSON.parse(reader.result); if (!data.responses || typeof data.responses !== 'object') throw new Error('格式不符'); responses = data.responses; save(); render(); alert('答案已載入。'); } catch { alert('無法讀取此檔案；請選擇由本問卷下載的 JSON 檔。'); } }; reader.readAsText(file); }
+      document.getElementById('questionnaire').addEventListener('input', handleInput);
+      document.getElementById('questionnaire').addEventListener('change', handleInput);
+      document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => { activeFilter = button.dataset.filter; document.querySelectorAll('.filter').forEach(item => item.classList.toggle('active', item === button)); render(); }));
+      document.getElementById('exportBtn').addEventListener('click', exportAnswers); document.getElementById('bottomExport').addEventListener('click', exportAnswers);
+      document.getElementById('importInput').addEventListener('change', event => { if (event.target.files[0]) importAnswers(event.target.files[0]); event.target.value = ''; });
+      document.getElementById('printBtn').addEventListener('click', () => window.print());
+      document.getElementById('resetBtn').addEventListener('click', () => { if (confirm('確定清除此瀏覽器內的全部問卷答案？已下載的 JSON 不會受影響。')) { responses = {}; localStorage.removeItem(STORAGE_KEY); render(); } });
+      render();
+    </script>
+  </body>
+</html>
