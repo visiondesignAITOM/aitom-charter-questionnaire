@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="AiTOM 公司章程改版進度與治理文件白話總覽" />
+    <title>AiTOM 公司治理總覽</title>
+    <style>
+      :root {
+        --ink: #18212a;
+        --subtle: #66717c;
+        --paper: #f8f8f6;
+        --surface: #ffffff;
+        --line: #dedfdd;
+        --blue: #1f5870;
+        --teal: #167f82;
+        --gold: #a96f15;
+        --gold-bg: #fff5dd;
+        --blue-bg: #eaf4f6;
+        --gray-bg: #f1f3f3;
+        --shadow: 0 12px 35px rgba(22, 33, 42, .08);
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--paper);
+        font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+        line-height: 1.65;
+      }
+      a { color: inherit; }
+      .shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 34px 0 80px; }
+      .hero {
+        padding: 44px clamp(24px, 6vw, 68px);
+        color: #f7fbfc;
+        background: linear-gradient(128deg, #132f44, #1c6067);
+        border-radius: 26px;
+        box-shadow: var(--shadow);
+      }
+      .eyebrow { margin: 0 0 9px; color: #bfe1de; font-size: .78rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+      h1, h2, h3, p { margin-top: 0; }
+      h1 { margin-bottom: 13px; font-family: ui-serif, "Noto Serif TC", "Songti TC", serif; font-size: clamp(2rem, 5vw, 3.65rem); line-height: 1.16; letter-spacing: .02em; }
+      .hero-copy { max-width: 760px; margin-bottom: 0; color: #deebed; font-size: clamp(1rem, 1.8vw, 1.15rem); }
+      .jump { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; }
+      .jump a { padding: 8px 12px; border: 1px solid rgba(255, 255, 255, .3); border-radius: 999px; color: #effafa; text-decoration: none; font-size: .88rem; font-weight: 700; }
+      .jump a:hover { background: rgba(255, 255, 255, .12); }
+      section { margin-top: 42px; }
+      .section-heading { max-width: 780px; margin-bottom: 17px; }
+      h2 { margin-bottom: 6px; font-size: clamp(1.45rem, 3vw, 2rem); line-height: 1.3; }
+      .section-heading p { margin-bottom: 0; color: var(--subtle); }
+      .progress-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+      .progress-card { min-height: 174px; padding: 21px; background: var(--surface); border: 1px solid var(--line); border-radius: 15px; box-shadow: 0 4px 12px rgba(22, 33, 42, .03); }
+      .progress-card.done { border-top: 4px solid var(--teal); }
+      .progress-card.next { border-top: 4px solid #d39732; }
+      .status { display: inline-block; margin-bottom: 11px; padding: 2px 8px; border-radius: 999px; background: var(--blue-bg); color: var(--blue); font-size: .76rem; font-weight: 800; }
+      .next .status { background: var(--gold-bg); color: var(--gold); }
+      .progress-card h3 { margin-bottom: 7px; font-size: 1.06rem; }
+      .progress-card p { margin-bottom: 0; color: var(--subtle); font-size: .93rem; }
+      .matrix-wrap { overflow: auto; border: 1px solid var(--line); border-radius: 16px; background: var(--surface); box-shadow: var(--shadow); }
+      .matrix { width: 100%; min-width: 760px; border-collapse: collapse; table-layout: fixed; }
+      .matrix th, .matrix td { padding: 20px; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+      .matrix th { color: #2a3036; background: #fbfbfa; font-size: 1.02rem; font-weight: 800; }
+      .matrix th:nth-child(1), .matrix td:nth-child(1) { width: 30%; }
+      .matrix th:nth-child(2), .matrix td:nth-child(2) { width: 39%; }
+      .matrix th:nth-child(3), .matrix td:nth-child(3) { width: 31%; }
+      .matrix tr:last-child td { border-bottom: 0; }
+      .matrix strong { display: block; margin-bottom: 3px; font-size: 1.04rem; }
+      .matrix td { font-size: .98rem; }
+      .gap { color: #6e4d15; }
+      .plain-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+      details { overflow: hidden; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+      summary { position: relative; padding: 19px 52px 19px 20px; cursor: pointer; list-style: none; font-size: 1.06rem; font-weight: 800; }
+      summary::-webkit-details-marker { display: none; }
+      summary::after { content: "+"; position: absolute; top: 15px; right: 19px; display: grid; width: 27px; height: 27px; place-items: center; border-radius: 50%; color: var(--blue); background: var(--blue-bg); font-size: 1.35rem; font-weight: 500; }
+      details[open] summary::after { content: "−"; }
+      .detail-body { padding: 0 20px 20px; color: #4e5962; }
+      .detail-body p { margin-bottom: 0; }
+      .detail-body ul { margin: 12px 0 0; padding-left: 1.25em; }
+      .detail-body li + li { margin-top: 5px; }
+      .flow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+      .flow-step { position: relative; min-height: 142px; padding: 18px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+      .flow-step:not(:last-child)::after { content: "→"; position: absolute; top: 50%; right: -19px; z-index: 1; transform: translateY(-50%); color: var(--teal); font-size: 1.4rem; font-weight: 800; }
+      .flow-step span { display: block; margin-bottom: 7px; color: var(--teal); font-size: .78rem; font-weight: 800; letter-spacing: .08em; }
+      .flow-step strong { display: block; font-size: 1.04rem; }
+      .flow-step p { margin: 5px 0 0; color: var(--subtle); font-size: .9rem; }
+      .next-action { padding: 26px; border-radius: 17px; color: #eaf7f7; background: #183b50; }
+      .next-action h2 { color: white; }
+      .next-action p { margin-bottom: 14px; color: #d8e9eb; }
+      .next-action ol { margin: 0; padding-left: 1.35em; }
+      .next-action li + li { margin-top: 7px; }
+      .action-link { display: inline-block; margin-top: 20px; padding: 10px 14px; border-radius: 9px; color: #153b4a; background: #d6f0eb; text-decoration: none; font-weight: 800; }
+      .notice { margin-top: 22px; color: var(--subtle); font-size: .88rem; }
+      @media (max-width: 760px) {
+        .shell { width: min(100% - 26px, 1180px); padding-top: 13px; }
+        .hero { padding: 31px 23px; border-radius: 20px; }
+        section { margin-top: 32px; }
+        .progress-grid, .plain-grid, .flow { grid-template-columns: 1fr; }
+        .flow-step:not(:last-child)::after { top: auto; right: auto; bottom: -22px; left: 50%; transform: translateX(-50%) rotate(90deg); }
+        .flow { gap: 27px; }
+        .matrix th, .matrix td { padding: 15px; }
+      }
+      @media print {
+        body { background: white; }
+        .shell { width: 100%; padding: 0; }
+        .hero { color: var(--ink); background: white; box-shadow: none; border-bottom: 2px solid var(--ink); border-radius: 0; }
+        .hero-copy { color: var(--subtle); }
+        .jump { display: none; }
+        .progress-card, details, .flow-step, .next-action { break-inside: avoid; box-shadow: none; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">AiTOM · Governance roadmap</p>
+        <h1>公司章程改版<br>與治理總覽</h1>
+        <p class="hero-copy">這不是只有一份章程。它是一套把夫妻創辦人的控制權、孩子的長期保障、外部投資、員工入股，以及 AI 與智慧財產權放在同一張地圖上的治理安排。</p>
+        <nav class="jump" aria-label="頁內導覽">
+          <a href="#progress">本次已推進</a><a href="#framework">框架與缺口</a><a href="#plain">白話說明</a><a href="#next">下一步</a>
+        </nav>
+      </header>
+
+      <section id="progress">
+        <div class="section-heading"><h2>這次已經推進什麼</h2><p>核心方向已寫入章程草案；需要個人選擇、簽名或外部專業確認的內容，則保留在下一階段文件處理。</p></div>
+        <div class="progress-grid">
+          <article class="progress-card done"><span class="status">已納入章程</span><h3>兩位創辦人共同保護</h3><p>增資、稀釋、選解任董監、賣公司、賣核心 IP、合併、解散等重大事項，兩位創辦人都必須本人出席並書面同意。</p></article>
+          <article class="progress-card done"><span class="status">已納入章程</span><h3>股權與外部投資</h3><p>創辦人有最優先承購與認購權。投資可分為投資整間公司，或投資特定 AI／服務專案的 SPV，避免母公司核心資產被直接拿走。</p></article>
+          <article class="progress-card done"><span class="status">已納入章程</span><h3>僵局與退出保護</h3><p>重大事項卡住時，會自動進入協商、獨立調解、維持現狀；超過 60 日才開放同價買賣，且不得低於公平價值。</p></article>
+          <article class="progress-card done"><span class="status">已納入章程</span><h3>員工與外部經理人</h3><p>員工需全職滿三年、創造可辨識價值、經創辦人同意才可能取得股權；外部經理人只能在書面授權和預算內行動。</p></article>
+          <article class="progress-card done"><span class="status">已納入章程</span><h3>研發、著作與 AI 資產</h3><p>公司業務過程中的研發、文章、作品、程式、模型、資料與衍生成果，原則上應歸公司；並要求 IP、保密、開源與生成式 AI 使用紀錄。</p></article>
+          <article class="progress-card next"><span class="status">下一份文件</span><h3>家族與公司持續營運</h3><p>創辦人發生事故時，公司怎麼保全已寫進章程；但正、備位接班人、遺囑／信託與孩子的實際受益安排，仍需個別定下來。</p></article>
+        </div>
+      </section>
+
+      <section id="framework">
+        <div class="section-heading"><h2>框架、用途、目前缺口</h2><p>這是你截圖所示的主架構：每一份文件各自負責一件事，避免把所有細節硬塞進公司章程。</p></div>
+        <div class="matrix-wrap">
+          <table class="matrix">
+            <thead><tr><th>框架</th><th>用途</th><th>目前缺口</th></tr></thead>
+            <tbody>
+              <tr><td><strong>經濟部閉鎖性公司章程格式</strong></td><td>公司登記與法定底線。確定公司名稱、資本、股東會、董事、盈餘與閉鎖性股份轉讓限制。</td><td class="gap">最後逐條與登記文件核對，並由律師或公司登記專業人員確認可登記性。</td></tr>
+              <tr><td><strong>AiTOM 修訂章程草案</strong></td><td>把兩位創辦人的共同控制、股份優先承購、外部投資、員工股權、經理人、IP、僵局與解散保護寫成公司基本規則。</td><td class="gap">已完成討論草案；仍須正式法律複核及簽署／登記版本。</td></tr>
+              <tr><td><strong>NVCA 式股東／投資協議</strong></td><td>處理投資條件、估值、資訊權、優先認購、共同出售、強制出售、違約、付款與交割等章程不宜寫太細的問題。</td><td class="gap">目前尚未形成獨立協議；投資人真正進場前必須完成。</td></tr>
+              <tr><td><strong>家族與公司持續營運計畫</strong></td><td>創辦人罹難或失能時，維持薪資、客戶、資料、雲端、帳務與 IP 的保全；讓經營權不會突然失控。</td><td class="gap">需指定正、備位緊急營運接班人，並和遺囑、信託、保險及未成年子女安排串起來。</td></tr>
+              <tr><td><strong>WIPO／智慧局 IP 管理</strong></td><td>建立 IP 清冊、權利鏈、保密、外包、研發申報與開源軟體管理，讓「應歸公司」能真的證明並執行。</td><td class="gap">章程已有原則；員工／外包合約、清冊與交付流程尚待建立。</td></tr>
+              <tr><td><strong>NIST AI RMF</strong></td><td>用於 AI 專案的資料來源、測試、風險、上線、客戶承諾與事件處理，讓 AI 服務可以安全擴張。</td><td class="gap">尚未建立專案級治理表與上線檢核表。</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="plain">
+        <div class="section-heading"><h2>整份結構的白話文</h2><p>可以把它理解為：章程是公司的憲法；其他文件是讓憲法真的能在日常、投資與事故時運作的操作手冊。</p></div>
+        <div class="plain-grid">
+          <details open><summary>1. 公司章程：誰能決定公司的大事？</summary><div class="detail-body"><p>章程是公開登記的基本規則。你們的版本把「會改變公司命運」的事情拉回兩位創辦人共同決定，例如增資、引進投資人、賣 IP、選經理人、解散公司。日常營運不用每次都兩人表決，但重大事情不能由 60% 持股的一方單獨決定。</p></div></details>
+          <details><summary>2. 股權：股份不是想賣就能賣</summary><div class="detail-body"><p>任何股東想賣、贈與、信託或設質股份，原則上要先讓創辦人承購。這是閉鎖性公司的核心：你們可以控制誰進入股東名單。員工拿到股份後也一樣不能私下轉賣。</p></div></details>
+          <details><summary>3. 增資與投資：可以拿錢，但不能失去公司</summary><div class="detail-body"><p>外部資金有兩條路：投資母公司，或只投資某個 AI／服務專案。第二條路可用 SPV 或合資安排，讓投資人參與該案的收益與風險，但不當然拿到 AiTOM 的品牌、資料、模型與整體股權。</p></div></details>
+          <details><summary>4. 僵局：意見不合時，不讓公司被衝動賣掉</summary><div class="detail-body"><p>兩位創辦人卡住時，先協商 15 個工作日，再進獨立調解 30 日，期間維持現狀。60 日仍無解，才由任一方提出同價買賣；對方可用相同價格買，或以相同價格賣。公平價值是價格底線。</p></div></details>
+          <details><summary>5. 員工與經理人：讓人做事，不讓人拿走控制權</summary><div class="detail-body"><p>員工不是因為待得久就自動分股：必須全職滿三年、仍在職、沒有重大違約、且有可被說明的價值。外部經理人也不是「交給他」就可以；他的簽約、付款、銀行、系統、客戶資料與 IP 權限都必須寫清楚、可以撤回、且留紀錄。</p></div></details>
+          <details><summary>6. IP、作品與 AI：公司要有一條拿得出來的權利鏈</summary><div class="detail-body"><p>章程先定原則：公司工作中產出的程式、文章、設計、模型與資料，應由公司取得可讓與的權利。但真正能保護公司的，是每位員工、顧問、外包都簽 IP／保密條款，以及公司保有原始碼、資料來源、開源授權與 AI 工具紀錄。</p></div></details>
+          <details><summary>7. 家族傳承：孩子受益，不等於孩子現在要經營公司</summary><div class="detail-body"><p>事故條款的目標是先讓公司不停擺：薪資可發、客戶可服務、資料與帳戶不會失控。股份最終怎麼繼承、孩子何時受益、父母如何被照顧，則應透過遺囑、信託與保險完成；這些不能只靠公司章程決定。</p></div></details>
+          <details><summary>8. 解散或離場：最後才賣，且不能被逼賣</summary><div class="detail-body"><p>投資人不能自行要求你們買回股份、解散公司或處分核心 IP。若真的要解散、賣掉主要資產或出售公司，仍要依重大事項程序，並先處理債務、稅務、員工與公平價值，避免任何一方低價拿走公司資產。</p></div></details>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-heading"><h2>這些文件如何一起保護公司</h2><p>章程定「不能越過的線」；日常管理和個案交易，則由更細的配套文件執行。</p></div>
+        <div class="flow" aria-label="治理文件關係">
+          <div class="flow-step"><span>公司憲法</span><strong>章程</strong><p>定股權、重大事項與法定治理底線。</p></div>
+          <div class="flow-step"><span>股東關係</span><strong>股東協議</strong><p>定投資、買賣選擇、付款、違約與交割細節。</p></div>
+          <div class="flow-step"><span>日常執行</span><strong>授權矩陣＋IP 文件</strong><p>定誰可簽、可花、可碰資料與成果如何交付。</p></div>
+          <div class="flow-step"><span>事故與傳承</span><strong>家族持續營運計畫</strong><p>定誰先保全公司，以及如何銜接遺囑、信託與繼承。</p></div>
+        </div>
+      </section>
+
+      <section id="next" class="next-action">
+        <h2>現在最需要你決定的三件事</h2>
+        <p>章程草案已能保護公司，但下面三個人選與安排不能由我替你猜，需要你們夫妻直接確認。</p>
+        <ol>
+          <li>誰是「緊急營運接班人」？誰是備位？他們只負責保全營運，不自動取得股權或重大決策權。</li>
+          <li>孩子的經濟權益要怎麼被照顧？建議由遺囑／信託／保險處理，而非直接讓未成年孩子承擔日常公司治理。</li>
+          <li>第一個外部投資若出現時，你們要接受的是公司層級投資，還是特定專案 SPV 投資？兩者的控制權與退出條件不同。</li>
+        </ol>
+        <a class="action-link" href="公司章程互動問卷.html">回到逐條章程問卷</a>
+      </section>
+      <p class="notice">本頁為治理討論與文件規劃摘要，不取代律師、會計師、遺囑／信託或公司登記的正式專業意見。</p>
+    </main>
+  </body>
+</html>
