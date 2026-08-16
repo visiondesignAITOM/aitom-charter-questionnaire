@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="AiTOM 公司章程條文變更流水與版本紀錄" />
+    <title>AiTOM 章程條文變更流水</title>
+    <style>
+      :root { --ink:#172633; --muted:#61707d; --paper:#f7f8f7; --surface:#fff; --line:#dce2e3; --navy:#153c59; --teal:#167f82; --pale:#eaf4f5; --gold:#a56916; --gold-bg:#fff4dc; --shadow:0 9px 25px rgba(21,45,61,.07); }
+      * { box-sizing:border-box; } html { scroll-behavior:smooth; }
+      body { margin:0; color:var(--ink); background:var(--paper); font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif; line-height:1.65; }
+      .shell { width:min(100% - 32px, 1040px); margin:0 auto; padding:26px 0 72px; }
+      .hero { padding:38px clamp(21px,5vw,55px); border-radius:22px; color:#f7fbfc; background:linear-gradient(135deg,#173c58,#1b6a6d); box-shadow:var(--shadow); }
+      .eyebrow { margin:0 0 9px; color:#bde4dd; font-size:.76rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+      h1,h2,h3,p { margin-top:0; } h1 { margin-bottom:10px; font-family:ui-serif,"Noto Serif TC","Songti TC",serif; font-size:clamp(2rem,5vw,3.25rem); line-height:1.16; }
+      .hero p:last-of-type { max-width:690px; margin-bottom:0; color:#deeaed; }
+      .nav { display:flex; flex-wrap:wrap; gap:8px; margin-top:21px; } .nav a { padding:7px 11px; border:1px solid rgba(255,255,255,.3); border-radius:999px; color:#f4fbfb; text-decoration:none; font-size:.86rem; font-weight:700; }
+      .stat-row { display:grid; grid-template-columns:repeat(3,1fr); gap:11px; margin-top:19px; }
+      .stat { padding:12px 14px; border:1px solid rgba(255,255,255,.2); border-radius:11px; background:rgba(255,255,255,.08); } .stat strong { display:block; color:#fff; font-size:1.2rem; } .stat span { color:#d8ebe9; font-size:.79rem; }
+      section { margin-top:34px; } .lead { margin-bottom:14px; } h2 { margin-bottom:5px; font-size:1.55rem; } .lead p { margin-bottom:0; color:var(--muted); }
+      .rule { padding:16px 18px; border-left:4px solid var(--teal); border-radius:0 12px 12px 0; color:#42525e; background:var(--pale); font-size:.94rem; }
+      .timeline { display:grid; gap:12px; }
+      details { overflow:hidden; border:1px solid var(--line); border-radius:15px; background:var(--surface); box-shadow:0 3px 10px rgba(21,45,61,.025); }
+      summary { position:relative; display:grid; grid-template-columns:auto 1fr auto; gap:13px; align-items:center; padding:17px 52px 17px 18px; cursor:pointer; list-style:none; }
+      summary::-webkit-details-marker { display:none; } summary::after { content:"+"; position:absolute; right:18px; top:50%; transform:translateY(-50%); display:grid; place-items:center; width:27px; height:27px; border-radius:50%; background:var(--pale); color:var(--teal); font-size:1.35rem; font-weight:500; }
+      details[open] summary { border-bottom:1px solid var(--line); } details[open] summary::after { content:"−"; }
+      .version { min-width:49px; padding:4px 7px; border-radius:8px; color:#fff; background:var(--navy); font-size:.8rem; font-weight:800; text-align:center; }
+      .summary-title { font-size:1.02rem; font-weight:800; } .summary-sub { display:block; color:var(--muted); font-size:.85rem; font-weight:500; } .date { color:var(--muted); font-size:.84rem; white-space:nowrap; }
+      .batch { padding:18px; } .batch-note { margin:0 0 15px; color:#4d5e68; font-size:.93rem; }
+      .changes { display:grid; gap:10px; }
+      .change { padding:15px 16px; border-radius:11px; background:#fafcfc; border:1px solid #e7ebeb; }
+      .change-head { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:7px; } .article { padding:2px 8px; border-radius:999px; color:#135e63; background:#dff1ef; font-size:.78rem; font-weight:800; } .state { padding:2px 8px; border-radius:999px; color:#765010; background:var(--gold-bg); font-size:.78rem; font-weight:800; }
+      .change h3 { margin:0; font-size:1rem; } .change p { margin:0; color:#465660; font-size:.92rem; } .change p + p { margin-top:6px; } .reason { color:#6a4f18 !important; }
+      .labels { display:grid; grid-template-columns:1fr 1fr; gap:11px; margin-top:25px; } .label-card { padding:18px; border:1px solid var(--line); border-radius:13px; background:#fff; } .label-card h3 { margin-bottom:5px; } .label-card p { margin:0; color:var(--muted); font-size:.91rem; }
+      .footer { margin-top:28px; padding:22px; border-radius:14px; color:#e1eff1; background:var(--navy); } .footer h2 { color:#fff; } .footer p { margin-bottom:0; }
+      .footer a { display:inline-block; margin-top:13px; padding:9px 12px; border-radius:9px; color:#123a4f; background:#d7efeb; text-decoration:none; font-weight:800; }
+      @media (max-width:640px) { .shell { width:min(100% - 24px,1040px); padding-top:12px; } .hero { padding:29px 21px; } .stat-row { grid-template-columns:1fr; } summary { grid-template-columns:auto 1fr; padding-right:47px; } .date { grid-column:2; } .labels { grid-template-columns:1fr; } }
+      @media print { body { background:#fff; } .shell { width:100%; padding:0; } .hero { color:var(--ink); background:#fff; border-bottom:2px solid var(--ink); border-radius:0; box-shadow:none; } .hero p:last-of-type { color:var(--muted); } .nav,.stat-row { display:none; } details { break-inside:avoid; box-shadow:none; } details:not([open]) .batch { display:block; } }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <p class="eyebrow">AiTOM · charter change ledger</p>
+        <h1>章程條文<br>變更流水</h1>
+        <p>每一次實質異動都保留一筆版本紀錄：改哪一條、改成什麼方向、為什麼改，以及目前是否已納入草案。舊紀錄不覆寫；新修改只會往上新增。</p>
+        <nav class="nav" aria-label="頁面導覽"><a href="#ledger">查看流水</a><a href="#rules">紀錄規則</a><a href="章程治理總覽.html">治理總覽</a><a href="公司章程互動問卷.html">逐條問卷</a></nav>
+        <div class="stat-row"><div class="stat"><strong>v0.7</strong><span>目前章程草案版本</span></div><div class="stat"><strong>8 批</strong><span>已回填的歷史變更</span></div><div class="stat"><strong>第 22 條之一</strong><span>最新加入的條文</span></div></div>
+      </header>
+
+      <section id="ledger">
+        <div class="lead"><h2>變更流水（最新在上）</h2><p>點選任一批次展開。每個黃色標記表示當時的處理狀態；正式章程以最新草案為準。</p></div>
+        <p class="rule"><strong>讀法：</strong>「變更」說明條文目前放進了什麼；「原因」是當時的治理目的。這頁是決策與版本紀錄，不取代完整章程條文。</p>
+        <div class="timeline">
+          <details open><summary><span class="version">v0.7</span><span class="summary-title">合約治理與簽約權限<span class="summary-sub">新增第 22 條之一</span></span><time class="date">2026-08-16</time></summary><div class="batch"><p class="batch-note">把「誰能簽、簽什麼、需要誰覆核」定成公司底線；具體格式留給授權矩陣和合約範本。</p><div class="changes"><article class="change"><div class="change-head"><span class="article">第 22 條之一</span><span class="state">新增</span><h3>合約治理與簽約權限</h3></div><p><strong>變更：</strong>一般合約由代表人或書面授權者依範本、預算與權限矩陣簽署；建立合約清冊。員工、外包、供應商、客戶、資料與 AI 合約需處理保密、資料安全、IP、交付與交接。</p><p class="reason"><strong>原因：</strong>讓日常簽約能快，但核心 IP、資料、AI、排他、長約、投資與關係人交易不能繞過兩位創辦人。</p></article></div></div></details>
+
+          <details><summary><span class="version">v0.6</span><span class="summary-title">家族傳承、外部投資與解散退出<span class="summary-sub">事故保全與投資人邊界</span></span><time class="date">2026-08-16</time></summary><div class="batch"><p class="batch-note">把公司經營權、家庭經濟權益與投資人權利拆開，避免事故或投資進場時失去控制權。</p><div class="changes"><article class="change"><div class="change-head"><span class="article">第 6 條</span><span class="state">收緊</span><h3>對外保證</h3></div><p><strong>變更：</strong>公司保證只限直接相關業務、專案或子公司，且需雙創辦人書面同意及風險文件。</p><p class="reason"><strong>原因：</strong>避免公司為創辦人、關係人或不相干第三人承擔無對價風險。</p></article><article class="change"><div class="change-head"><span class="article">第 9、9 之三條</span><span class="state">新增／補強</span><h3>非自願取得股份與創辦人事故</h3></div><p><strong>變更：</strong>繼承、離婚、破產或強制執行取得股份者仍受章程拘束；單一創辦人事故時另一人僅能保全日常營運，雙方事故時由另訂計畫的接班人有限保全。</p><p class="reason"><strong>原因：</strong>保障公司不中斷，又不讓接班人或承受人自動取得控制權。</p></article><article class="change"><div class="change-head"><span class="article">第 9 之四、29 之一條</span><span class="state">新增</span><h3>投資進場與解散退出</h3></div><p><strong>變更：</strong>區分公司層級與專案／SPV 投資；投資人不能強制買回、解散或處分核心 IP。解散、清算與重大資產處分要雙創辦人同意及公平價值保護。</p><p class="reason"><strong>原因：</strong>保留未來募資彈性，不讓投資人以退出條款反向取得公司控制。</p></article><article class="change"><div class="change-head"><span class="article">第 25、29 條</span><span class="state">補強</span><h3>智財清冊與法定盈餘公積</h3></div><p><strong>變更：</strong>加入 IP／資料資產、研發、原始碼、模型、資料集、開源與生成式 AI 使用紀錄；補回法定盈餘公積已達實收資本額的例外。</p><p class="reason"><strong>原因：</strong>讓 IP 保護能被舉證與執行，並使盈餘條款符合現行法制結構。</p></article></div></div></details>
+
+          <details><summary><span class="version">v0.5</span><span class="summary-title">員工股權與外部經理人<span class="summary-sub">資格不是自動權利</span></span><time class="date">2026-08-16</time></summary><div class="batch"><p class="batch-note">把人才激勵與授權管理做成「可給、但不自動給；可委任、但不失控」。</p><div class="changes"><article class="change"><div class="change-head"><span class="article">第 11、27、28 條</span><span class="state">收緊</span><h3>員工入股與酬勞資格</h3></div><p><strong>變更：</strong>限全職受僱人，連續服務滿三年、仍在職、無重大違約並創造可辨識價值，且須兩位創辦人書面同意；已取得股份不得私下轉賣。</p><p class="reason"><strong>原因：</strong>把股權當成長期貢獻的獎勵，而非任職年資或職稱的自動福利。</p></article><article class="change"><div class="change-head"><span class="article">第 22 條</span><span class="state">重寫</span><h3>經理人授權、監督與交接</h3></div><p><strong>變更：</strong>經理人只有書面授權、核定預算與職務範圍內的權限；需月報、重大風險即時通報，創辦人可撤回授權並要求離任交接。</p><p class="reason"><strong>原因：</strong>可安心委任外部人才，但不把銀行、核心 IP、資料或重大合約的控制權交出去。</p></article></div></div></details>
+
+          <details><summary><span class="version">v0.4</span><span class="summary-title">研發成果與自動僵局程序<span class="summary-sub">把保護做成可啟動的流程</span></span><time class="date">2026-08-16</time></summary><div class="batch"><p class="batch-note">確認「大宮東」是輸入筆誤，未加入任何決策設計。</p><div class="changes"><article class="change"><div class="change-head"><span class="article">第 25 條</span><span class="state">新增／補強</span><h3>公司成果、著作與研發 IP</h3></div><p><strong>變更：</strong>公司業務或專案中的研發、程式、資料、文章、設計與衍生成果，原則應由公司依法取得；所有參與者需另簽 IP、保密與第三方素材揭露。</p><p class="reason"><strong>原因：</strong>章程只能定原則，還需要和員工／外包合約一起形成完整權利鏈。</p></article><article class="change"><div class="change-head"><span class="article">第 15 條之二</span><span class="state">重寫</span><h3>僵局自動啟動</h3></div><p><strong>變更：</strong>重大事項未能同意時，會議結束即開始 15 個工作日協商、30 日獨立調解與維持現狀；滿 60 日才開放同價買賣，價格不得低於公平價值。</p><p class="reason"><strong>原因：</strong>防止任一方拖延或逕自推進不可回復的交易。</p></article></div></div></details>
+
+          <details><summary><span class="version">v0.3</span><span class="summary-title">重大事項雙創辦人保護<span class="summary-sub">60% 不能單方面改變公司命運</span></span><time class="date">2026-08-15</time></summary><div class="batch"><p class="batch-note">把法律上可能由多數表決通過的事項，另加上兩位創辦人本人出席與書面同意。</p><div class="changes"><article class="change"><div class="change-head"><span class="article">第 15 條之一</span><span class="state">新增</span><h3>重大事項共同同意</h3></div><p><strong>變更：</strong>章程修正、增減資、發行股權、董監與經理人、合併、分割、解散、重大資產、核心 IP、外部投資與大額借款／保證等，須徐敏芳與張健一本人出席並書面同意。</p><p class="reason"><strong>原因：</strong>保護 40% 股東不被 60% 股東單方稀釋、賣公司或改變控制權。</p></article></div></div></details>
+
+          <details><summary><span class="version">v0.2</span><span class="summary-title">閉鎖性股權、融資與專案投資<span class="summary-sub">可募資，但要保留選擇權</span></span><time class="date">2026-08-15</time></summary><div class="batch"><p class="batch-note">原始套版中第 9 條仍有 A–E 選項；此批開始把它收斂成單一的創辦人保護制度。</p><div class="changes"><article class="change"><div class="change-head"><span class="article">第 7、8、9、9 之一條</span><span class="state">重寫／新增</span><h3>股份、增資與優先承購</h3></div><p><strong>變更：</strong>保留 1,000 萬授權資本與 300 萬首次實收資本；創辦人對股份轉讓及新股享最優先承購／認購權，外部條件不得更優。</p><p class="reason"><strong>原因：</strong>保留未來增資彈性，同時避免創辦人持股在不知情或不公平條件下被稀釋。</p></article><article class="change"><div class="change-head"><span class="article">第 9 之二、24、25 條</span><span class="state">新增</span><h3>專案公司與核心 IP 保護</h3></div><p><strong>變更：</strong>特定 AI／服務產品可用子公司、SPV 或合資投資；投資人不因投資專案而直接取得母公司整體股權、品牌或核心 IP。</p><p class="reason"><strong>原因：</strong>讓投資人能投特定機會，又避免母公司最重要的資產被綁走。</p></article><article class="change"><div class="change-head"><span class="article">第 11 條</span><span class="state">新增</span><h3>員工入股基本架構</h3></div><p><strong>變更：</strong>建立員工股權工具、完全稀釋不超過 10% 原則、四年歸屬與首年 25% 懸崖期。</p><p class="reason"><strong>原因：</strong>預留人才激勵，但在實際授與前仍保留創辦人判斷。</p></article></div></div></details>
+
+          <details><summary><span class="version">v0.1</span><span class="summary-title">公司基本設定確認<span class="summary-sub">保留登記名稱、所在地與業務</span></span><time class="date">2026-08-12</time></summary><div class="batch"><p class="batch-note">這一批主要是「確認不改什麼」，讓後續治理條款不會意外動到已定的公司基礎資料。</p><div class="changes"><article class="change"><div class="change-head"><span class="article">第 1 條</span><span class="state">確認保留</span><h3>公司名稱與品牌</h3></div><p><strong>變更：</strong>中文登記名稱維持「源點品牌顧問股份有限公司」；對外品牌為 AiTOM，英文名稱為 AiTOM Brand Growth &amp; AI Transformation Consultancy Co., Ltd.</p><p class="reason"><strong>原因：</strong>中文登記名稱不可改，品牌與英文定位另行清楚標示。</p></article><article class="change"><div class="change-head"><span class="article">第 2、3、4 條</span><span class="state">確認保留</span><h3>閉鎖性、業務與所在地</h3></div><p><strong>變更：</strong>維持閉鎖性股份有限公司、全部 16 項所營事業與高雄市總公司設定。</p><p class="reason"><strong>原因：</strong>目前不調整登記基礎，把討論集中在治理、融資與 IP。</p></article></div></div></details>
+
+          <details><summary><span class="version">v0.0</span><span class="summary-title">原始套版基線<span class="summary-sub">收到閉鎖性公司章程範本</span></span><time class="date">2026-08-05</time></summary><div class="batch"><p class="batch-note">這是所有後續修改的比較基準，不刪除。</p><div class="changes"><article class="change"><div class="change-head"><span class="article">第 1 至 31 條</span><span class="state">原始版本</span><h3>源點股份有限公司（閉鎖性）套版</h3></div><p><strong>狀態：</strong>原稿為閉鎖性股份有限公司章程套版；第 9 條仍保留多個股份轉讓選項，第 24、25 條缺漏，第 17 至 19 條的董事架構與程序用語需再核對。</p><p class="reason"><strong>作用：</strong>作為修訂比對的起點，後續所有實質變動均依本頁版本批次追溯。</p></article></div></div></details>
+        </div>
+      </section>
+
+      <section id="rules"><div class="lead"><h2>從現在開始的紀錄規則</h2><p>你每次說「改」、「保留」、「刪除」或確認新的治理安排，我會先新增一筆流水，再更新草案與手機頁。</p></div><div class="labels"><article class="label-card"><h3>不覆寫歷史</h3><p>舊版本與當時理由會保留；若後來改變主意，會新增「更正／取代」紀錄，而不是把前一筆偷改掉。</p></article><article class="label-card"><h3>每筆都有條號</h3><p>紀錄至少包含日期、版本、受影響條文、變更摘要、原因、狀態及相關配套文件。</p></article><article class="label-card"><h3>章程與配套分開</h3><p>若事情應放在股東協議、遺囑／信託、權限矩陣或合約範本，流水會明示，不會假裝章程已完整解決。</p></article><article class="label-card"><h3>手機優先</h3><p>歷史批次預設收合，最新版本預設展開；因此可以快速看最新，也能隨時回查前因後果。</p></article></div></section>
+      <section class="footer"><h2>下一筆會從哪裡開始？</h2><p>合約範本包目前是下一個工作項目；完成時將新增 v0.8，並列出其屬於配套文件、不是章程條文本身。</p><a href="章程治理總覽.html">回到治理總覽</a></section>
+    </main>
+  </body>
+</html>
